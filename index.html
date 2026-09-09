@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Countdown to the Gunman Contracts Stand-Alone launch.">
+    <title>Gunman Contracts Stand-Alone Launch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --background: #061015;
+            --accent: #e6a52d;
+            --accent-light: #f3bd51;
+            --text: #e8e2d7;
+            --text-muted: #9ba8aa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            min-height: 100%;
+            background: var(--background);
+        }
+
+        body {
+            min-height: 100vh;
+            color: var(--text);
+            font-family: "Barlow Condensed", sans-serif;
+            background:
+                linear-gradient(90deg, rgba(3, 10, 14, 0.82), rgba(3, 10, 14, 0.48) 48%, rgba(3, 10, 14, 0.72)),
+                linear-gradient(0deg, rgba(3, 10, 14, 0.72), transparent 45%, rgba(3, 10, 14, 0.4)),
+                url("bg.jpg") center / cover no-repeat;
+            overflow-x: hidden;
+        }
+
+        main {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 24px;
+        }
+
+        .launch {
+            width: min(920px, 100%);
+            text-align: center;
+        }
+
+        .eyebrow {
+            margin-bottom: 8px;
+            color: var(--accent);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 850px;
+            margin: 0 auto;
+            font-size: clamp(3.1rem, 8vw, 7rem);
+            font-weight: 800;
+            line-height: 0.88;
+            letter-spacing: 0.015em;
+            text-transform: uppercase;
+        }
+
+        h1 span {
+            display: block;
+            margin-top: 10px;
+            color: var(--accent);
+        }
+
+        .divider {
+            width: 90px;
+            height: 3px;
+            margin: 35px auto;
+            background: var(--accent);
+        }
+
+        .countdown-label {
+            margin-bottom: 14px;
+            color: var(--text-muted);
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+        }
+
+        .countdown {
+            display: flex;
+            align-items: baseline;
+            justify-content: center;
+            gap: clamp(12px, 3vw, 34px);
+            font-variant-numeric: tabular-nums;
+        }
+
+        .time {
+            display: flex;
+            align-items: baseline;
+            gap: 5px;
+        }
+
+        .time-value {
+            min-width: 1.1em;
+            font-size: clamp(3rem, 9vw, 7.5rem);
+            font-weight: 700;
+            line-height: 1;
+        }
+
+        .time-label {
+            color: var(--accent);
+            font-size: clamp(0.95rem, 2vw, 1.35rem);
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .actions {
+            margin-top: 44px;
+        }
+
+        .steam-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 210px;
+            padding: 15px 30px;
+            border: 2px solid var(--accent);
+            color: var(--background);
+            background: var(--accent);
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.13em;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: color 160ms ease, background-color 160ms ease, transform 160ms ease;
+        }
+
+        .steam-link:hover,
+        .steam-link:focus-visible {
+            color: var(--accent-light);
+            background: rgba(6, 16, 21, 0.9);
+            transform: translateY(-2px);
+        }
+
+        .steam-link:focus-visible {
+            outline: 2px solid var(--text);
+            outline-offset: 4px;
+        }
+
+        .launch-date {
+            margin-top: 18px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .released {
+            color: var(--accent);
+            font-size: clamp(3.2rem, 9vw, 7rem);
+            font-weight: 800;
+            line-height: 0.95;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        @media (max-width: 620px) {
+            main {
+                align-items: flex-end;
+                padding: 45px 18px 70px;
+            }
+
+            h1 {
+                font-size: clamp(2.9rem, 16vw, 5rem);
+            }
+
+            .divider {
+                margin: 27px auto;
+            }
+
+            .countdown {
+                display: grid;
+                grid-template-columns: repeat(2, auto);
+                gap: 18px 32px;
+            }
+
+            .time {
+                justify-content: flex-start;
+            }
+
+            .time-value {
+                font-size: clamp(3.5rem, 17vw, 5.5rem);
+            }
+
+            .actions {
+                margin-top: 34px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .steam-link {
+                transition: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <section class="launch" aria-labelledby="launch-title">
+            <p class="eyebrow">The Contracts Begin</p>
+            <h1 id="launch-title">Gunman Contracts<span>Stand-Alone</span></h1>
+            <div class="divider" aria-hidden="true"></div>
+            <p class="countdown-label">Launching in</p>
+
+            <div class="countdown" id="countdown" role="timer" aria-live="polite" aria-label="Time remaining until launch">
+                <div class="time"><span class="time-value" id="days">00</span><span class="time-label">Days</span></div>
+                <div class="time"><span class="time-value" id="hours">00</span><span class="time-label">Hours</span></div>
+                <div class="time"><span class="time-value" id="minutes">00</span><span class="time-label">Minutes</span></div>
+                <div class="time"><span class="time-value" id="seconds">00</span><span class="time-label">Seconds</span></div>
+            </div>
+
+            <div class="actions">
+                <a class="steam-link" href="https://store.steampowered.com/app/2421750/Gunman_Contracts__Stand_Alone/" target="_blank" rel="noopener noreferrer">View on Steam</a>
+                <p class="launch-date" id="launch-date"></p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const launchTime = Date.parse("2026-09-10T19:00:00+02:00");
+        const countdownElement = document.getElementById("countdown");
+        const daysElement = document.getElementById("days");
+        const hoursElement = document.getElementById("hours");
+        const minutesElement = document.getElementById("minutes");
+        const secondsElement = document.getElementById("seconds");
+        const launchDateElement = document.getElementById("launch-date");
+        const formatTime = value => String(value).padStart(2, "0");
+        let countdownInterval;
+
+        function showLocalLaunchTime() {
+            const launchDate = new Date(launchTime);
+            const viewerTimeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+            const localDate = new Intl.DateTimeFormat(undefined, {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                timeZoneName: "short"
+            }).format(launchDate);
+
+            launchDateElement.textContent = `${localDate} · ${viewerTimeZone}`;
+        }
+
+        function updateCountdown() {
+            const remainingTime = launchTime - Date.now();
+
+            if (remainingTime <= 0) {
+                countdownElement.innerHTML = '<p class="released">Available Now</p>';
+                clearInterval(countdownInterval);
+                return;
+            }
+
+            const totalSeconds = Math.floor(remainingTime / 1000);
+            daysElement.textContent = formatTime(Math.floor(totalSeconds / 86400));
+            hoursElement.textContent = formatTime(Math.floor((totalSeconds % 86400) / 3600));
+            minutesElement.textContent = formatTime(Math.floor((totalSeconds % 3600) / 60));
+            secondsElement.textContent = formatTime(totalSeconds % 60);
+        }
+
+        showLocalLaunchTime();
+        updateCountdown();
+        countdownInterval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
